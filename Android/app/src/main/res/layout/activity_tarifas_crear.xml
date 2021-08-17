@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TarifasCrearActivity">
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Nombre:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text="Tiempo:"
+        app:layout_constraintStart_toStartOf="@+id/radioGroupUnidadTiempo"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupUnidadTiempo" />
+
+    <EditText
+        android:id="@+id/editTextTiempo"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <EditText
+        android:id="@+id/editTextValor"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/buttonAgregarTarifa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Agregar tarifa"
+        app:layout_constraintStart_toStartOf="@+id/editTextTipoTarifa"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTipoTarifa" />
+
+    <EditText
+        android:id="@+id/editTextPlaca"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
+        android:text="Valor:"
+        app:layout_constraintStart_toStartOf="@+id/radioGroupUnidadTiempo"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupUnidadTiempo" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupUnidadTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/editTextPlaca"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPlaca">
+
+        <RadioButton
+            android:id="@+id/radioButtonDias"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Dias"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="394dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHoras"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Horas"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="394dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMinutos"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Minutos"
+            android:textAlignment="viewStart"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="394dp" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tipo Tarifa:"
+        app:layout_constraintStart_toStartOf="@+id/editTextTiempo"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTiempo" />
+
+    <EditText
+        android:id="@+id/editTextTipoTarifa"
+        android:layout_width="298dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+</android.support.constraint.ConstraintLayout>

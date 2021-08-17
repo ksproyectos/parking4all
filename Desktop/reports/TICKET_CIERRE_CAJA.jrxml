@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Caja" pageWidth="140" pageHeight="500" columnWidth="140" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="20" uuid="c44b1cba-37fe-4bad-a92f-b43a358c5407">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="80"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idCaja" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT NOW() AS Caja_FechaCierre, Caja.`FechaApertura` AS Caja_FechaApertura, Caja.`Total` AS Caja_Total, Usuarios.`Nombre` AS Usuarios_Nombre FROM `Caja` Caja LEFT JOIN `Usuarios` Usuarios ON Caja.`IdUsuarioApertura` = Usuarios.`idUsuario` WHERE Caja.`idCaja` = $P{idCaja}]]>
+	</queryString>
+	<field name="Caja_FechaCierre" class="java.sql.Timestamp"/>
+	<field name="Caja_FechaApertura" class="java.sql.Timestamp"/>
+	<field name="Caja_Total" class="java.lang.Integer"/>
+	<field name="Usuarios_Nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="21" uuid="a832b105-51cc-4c50-b782-078ced97667e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIERRE DE CAJA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="300" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="140" height="20" uuid="d04f0323-945b-413f-92f7-70a11d8bcdf2"/>
+				<textFieldExpression><![CDATA[$F{Caja_Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="20" uuid="c2799d88-41c4-44fc-80c3-c8f64c77b509"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL EN CAJA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="100" width="140" height="20" uuid="3d1ad042-03fc-48d6-ab32-789270fe7511"/>
+				<textFieldExpression><![CDATA[$F{Caja_FechaCierre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="140" height="20" uuid="349a24a1-1740-4a63-add6-29512b97530e"/>
+				<textFieldExpression><![CDATA[$F{Caja_FechaApertura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="140" height="20" uuid="ae42ba5f-57b5-4005-bfe8-7925c94215ae"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA APERTURA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="140" height="20" uuid="f05e03de-b125-4d01-a8dd-75dd92a77f48"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA CIERRE:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="0" y="122" width="140" height="155" uuid="72098a08-b858-4409-927c-6e55a25af722"/>
+				<subreportParameter name="idCaja">
+					<subreportParameterExpression><![CDATA[$P{idCaja}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}  + "Caja_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

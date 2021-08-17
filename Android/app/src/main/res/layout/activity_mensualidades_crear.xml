@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TarifasCrearActivity">
+
+
+    <EditText
+        android:id="@+id/editTextTelefono"
+        android:layout_width="299dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text="Telefono:"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumeroDocumento"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumeroDocumento" />
+
+    <EditText
+        android:id="@+id/editTextNumeroDocumento"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text="Numero Documento:"
+        app:layout_constraintStart_toStartOf="@+id/editTextNombres"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombres" />
+
+    <EditText
+        android:id="@+id/editTextNombres"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text="Nombres:"
+        app:layout_constraintStart_toStartOf="@+id/editTextPlaca"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPlaca" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Placa:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRegistrarMensualidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Registrar mensualidad"
+        app:layout_constraintStart_toStartOf="@+id/editTextTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTelefono" />
+
+    <EditText
+        android:id="@+id/editTextPlaca"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+</android.support.constraint.ConstraintLayout>

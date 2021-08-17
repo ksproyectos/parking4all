@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="517.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableViewMensualidades" layoutX="21.0" layoutY="52.0" prefHeight="183.0" prefWidth="607.0" />
+      <TextField fx:id="textFieldPlaca" layoutX="21.0" layoutY="423.0" onKeyReleased="#onKeyReleasedPlaca" prefWidth="129.0" promptText="Placa" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textFieldNoDocumento" layoutX="21.0" layoutY="244.0" prefWidth="230.0" promptText="No. Documento" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textFieldNombres" layoutX="21.0" layoutY="325.0" prefWidth="607.0" promptText="Nombres" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Button layoutX="406.0" layoutY="423.0" mnemonicParsing="false" onAction="#buttonEliminarMensualidadActionPerformed" prefWidth="90.0" styleClass="main-button" text="Eliminar" />
+      <Button layoutX="509.0" layoutY="423.0" mnemonicParsing="false" onAction="#buttonRegistrarMensualidadActionPerformed" prefWidth="118.0" styleClass="main-button" text="Registrar" />
+      <Label layoutX="21.0" layoutY="14.0" styleClass="text" text="Mensualidades">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboBoxTipoTarifa" layoutX="163.0" layoutY="423.0" prefHeight="70.0" prefWidth="236.0" promptText="Tarifa" styleClass="combo-box" />
+      <TextField fx:id="textFieldTelefono" layoutX="262.0" layoutY="244.0" onKeyReleased="#onKeyReleasedPlaca" prefWidth="364.0" promptText="Telefono contacto" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

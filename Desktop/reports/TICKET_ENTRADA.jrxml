@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ticket Entrada" pageWidth="140" pageHeight="300" whenNoDataType="AllSectionsNoDetail" columnWidth="140" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d0bec2ce-e10b-439d-8036-c5cd57485e64">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idMovimiento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     Movimientos.`Placa` AS Movimientos_Placa,
+     Movimientos.`FechaEntrada` AS Movimientos_FechaEntrada,
+     Usuarios.`Nombre` AS Usuarios_Nombre
+FROM
+     `Movimientos` Movimientos LEFT OUTER JOIN `Usuarios` Usuarios ON Movimientos.`Usuarios_idUsuarioEntrada` = Usuarios.`idUsuario`
+WHERE
+     Movimientos.`idMovimiento` = $P{idMovimiento}]]>
+	</queryString>
+	<field name="Movimientos_Placa" class="java.lang.String"/>
+	<field name="Movimientos_FechaEntrada" class="java.sql.Timestamp"/>
+	<field name="Usuarios_Nombre" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="33" uuid="f776d622-9d62-4a6f-9181-3765993c5bcf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIENVENIDO A PARQUEARTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="140" height="27" uuid="1ba750b9-26f9-4a46-befd-680f030801d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NIT 91274432-5 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="140" height="27" uuid="b683421f-d15e-4e5a-8af9-12ff7917d289"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CALLE 10 # 2-46]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="215" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="140" height="20" uuid="d0c15d38-6cd4-429f-a38e-e073f41d9979"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA HORA ENTRADA:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement isPrintRepeatedValues="false" x="0" y="146" width="140" height="42" uuid="177fe49e-39ea-4861-8572-b53a0225a7c0"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$F{Movimientos_Placa}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="31" width="140" height="20" uuid="f86a6eb5-d0b8-48a4-ae53-0486af32e0b5"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_FechaEntrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="51" width="140" height="20" uuid="14671dc3-ebd2-44dc-874f-1914ecbadbbd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLACA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="71" width="140" height="20" uuid="082ad8ff-8d44-4a1e-85a0-9ba6b07eec7b"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_Placa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="91" width="140" height="20" uuid="11f139af-1e73-4ce2-b93c-d5bb80cbde08"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE CAJERO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="111" width="140" height="20" uuid="f0a5c531-726f-4e05-b005-1b3643bc8c61"/>
+				<textFieldExpression><![CDATA[$F{Usuarios_Nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

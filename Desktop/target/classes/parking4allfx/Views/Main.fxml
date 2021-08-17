@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="370.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="ButtonEntradaSalida" layoutX="511.0" layoutY="21.0" mnemonicParsing="false" onAction="#onButtonEntradaSalidaAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Entrada/Salida" />
+      <TextField fx:id="TextFieldPlaca" layoutX="140.0" layoutY="22.0" onKeyReleased="#onKeyReleasedPlaca" prefHeight="70.0" prefWidth="359.0" promptText="PLACA">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </TextField>
+      <Label layoutX="142.0" layoutY="191.0" styleClass="text" text="Entrada:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="232.0" styleClass="text" text="Tiempo:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="140.0" layoutY="316.0" styleClass="text" text="Valor:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="275.0" styleClass="text" text="Tarifa:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="ButtonMovimientos" layoutX="14.0" layoutY="106.0" mnemonicParsing="false" onAction="#onButtonMovimientosAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Movimientos" />
+      <Button fx:id="ButtonUsuarios" layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#onButtonUsuariosAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Usuarios" />
+      <Button fx:id="ButtonTarifas" layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#onButtonTarifasAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Tarifas" />
+      <Button fx:id="ButtonMensualidades" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#onButtonMensualidadesAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Mensualidades" />
+      <Label fx:id="LabelEntrada" layoutX="251.0" layoutY="191.0" styleClass="text" text="5/05/2017 11:49am">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelTiempo" layoutX="251.0" layoutY="232.0" styleClass="text" text="3 Horas 20 Minutos">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelTarifa" layoutX="249.0" layoutY="275.0" styleClass="text" text="Moto">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelValor" layoutX="249.0" layoutY="316.0" styleClass="text" text="\$ 3.600">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="ButtonCaja" layoutX="511.0" layoutY="269.0" mnemonicParsing="false" onAction="#onButtonCajaAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Caja" />
+      <Label layoutX="142.0" layoutY="147.0" styleClass="text" text="Placa:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelPlaca" layoutX="251.0" layoutY="147.0" styleClass="text" text="AAA000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="ButtonEntradaSalida1" layoutX="511.0" layoutY="100.0" mnemonicParsing="false" onAction="#onButtonPrepagadaAction" prefHeight="70.0" prefWidth="112.0" styleClass="main-button" text="Prepagada" />
+   </children>
+</AnchorPane>

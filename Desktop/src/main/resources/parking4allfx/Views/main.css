@@ -1,0 +1,57 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #222;
+}
+.main-button {
+    -fx-background-color: #222;
+    -fx-text-fill: #eee;
+    -fx-border-color: #eee;
+    -fx-pref-height: 70px;
+    -fx-cursor: hand;
+}
+
+.text{
+    -fx-text-fill: #eee;
+}
+.main-button:hover{
+    -fx-background-color: #496ee3;
+}
+
+.main-button .list-view {
+    -fx-font-size : 15pt;
+}
+
+.input, .password-field {
+    -fx-pref-height: 70px;
+}
+.combo-box .cell{
+    -fx-font: 24px "Arial";
+    -fx-padding: 20 10 20 10;
+}
+.combo-box .list-cell 
+{
+    -fx-font: 24px "Arial";
+}
+
+.combo-box .text-input{
+    -fx-font: 24px "Arial";
+}
+
+.choice-box {
+    -fx-font: 24px "Arial";
+}
+
+.choice-box .context-menu { -fx-background-color: white; }
+.choice-box .menu-item:focused { -fx-background-color: black; }
+.choice-box .menu-item > .label { -fx-text-fill: black; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: white; }
+
+.choice-box {
+  -fx-background-color: white;
+  -fx-mark-color: black; 
+}
+
+.choice-box > .label { -fx-text-fill: black; }

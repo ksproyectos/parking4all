@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ticket Salida" pageWidth="140" pageHeight="1000" whenNoDataType="AllSectionsNoDetail" columnWidth="140" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d0bec2ce-e10b-439d-8036-c5cd57485e64">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="181"/>
+	<parameter name="idMovimiento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     Movimientos.`Placa` AS Movimientos_Placa,
+     Movimientos.`FechaEntrada` AS Movimientos_FechaEntrada,
+     Usuarios.`Nombre` AS Usuarios_Nombre,
+     Movimientos.`FechaSalida` AS Movimientos_FechaSalida,
+     Movimientos.`TipoTarifa` AS Movimientos_TipoTarifa,
+     Movimientos.`ValorTotal` AS Movimientos_ValorTotal
+FROM
+     `Movimientos` Movimientos LEFT OUTER JOIN `Usuarios` Usuarios ON Movimientos.`Usuarios_idUsuarioSalida` = Usuarios.`idUsuario`
+WHERE
+     Movimientos.`idMovimiento` = $P{idMovimiento}]]>
+	</queryString>
+	<field name="Movimientos_Placa" class="java.lang.String"/>
+	<field name="Movimientos_FechaEntrada" class="java.sql.Timestamp"/>
+	<field name="Usuarios_Nombre" class="java.lang.String"/>
+	<field name="Movimientos_FechaSalida" class="java.sql.Timestamp"/>
+	<field name="Movimientos_TipoTarifa" class="java.lang.String"/>
+	<field name="Movimientos_ValorTotal" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="33" uuid="74622acf-d4c1-43db-99db-5152cb3b6edb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIENVENIDO A PARQUEARTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="140" height="17" uuid="592df51e-4641-484f-8ee2-dfbbe3866438"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NIT 91274432-5 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="140" height="16" uuid="246126f2-6b84-4006-bea2-75fd896a95ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CALLE 10 # 2-46]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="400" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="20" uuid="8c0dd283-d1a4-46db-b222-854dba8db39e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLACA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="140" height="20" uuid="9891a728-46d5-4a59-8be5-8061a3cbf29c"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_Placa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="140" height="20" uuid="5168d6ae-11d2-4a97-a2c1-d05feebd46f9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA HORA ENTRADA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="60" width="140" height="20" uuid="2ef80bcc-5fbd-4f2d-adc4-6839b6716b41"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_FechaEntrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="80" width="140" height="20" uuid="f90488d5-6ba1-4a42-a431-7f321232a603"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA HORA SALIDA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="100" width="140" height="20" uuid="99d10474-086f-4687-b601-dc2200e7f25a"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_FechaSalida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="140" height="20" uuid="72652b8b-92ee-40de-9003-ee11e4b9937d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE CAJERO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="140" width="140" height="20" uuid="29c427ab-3c78-4870-9745-4d81b2c9dbc5"/>
+				<textFieldExpression><![CDATA[$F{Usuarios_Nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="160" width="140" height="20" uuid="400a9a9b-f9c5-450e-bec2-45598614ec89"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TARIFA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="180" width="140" height="20" uuid="5580ae00-709f-4728-bbb7-b40192627325"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_TipoTarifa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="200" width="140" height="20" uuid="f78db526-6686-4c65-84a1-c9fc174f265a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="220" width="140" height="20" uuid="d804df20-5384-4182-bbee-de1812735ef2"/>
+				<textFieldExpression><![CDATA[$F{Movimientos_ValorTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="240" width="140" height="20" uuid="68fdf049-c48a-41f3-a11c-a28d81cd7119"/>
+				<textFieldExpression><![CDATA[($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="260" width="140" height="20" uuid="7b89b850-8b75-4020-bb37-b30e67c0ff14"/>
+				<textFieldExpression><![CDATA[(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60))-((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24))*24)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="300" width="140" height="20" uuid="885a9cb3-0790-4dcb-89b5-156eaf3c9f2d"/>
+				<textFieldExpression><![CDATA[(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000))
+-(60*((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60))-(60* ((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60))-((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24))*24)))-(60*24*(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24)))))
+-(60*60*((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60))-((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24))*24)))
+-(60*60*24*(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24)))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="280" width="140" height="20" uuid="238f072e-b35b-4b6d-8acd-0c1cef3d9e25"/>
+				<textFieldExpression><![CDATA[(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60))
+-(60* ((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60))-((($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24))*24)))
+-(60*24*(($F{Movimientos_FechaSalida}.getTime()-$F{Movimientos_FechaEntrada}.getTime())/(1000 * 60 * 60 * 24)))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

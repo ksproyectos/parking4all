@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableViewMovimientos" layoutX="24.0" layoutY="235.0" prefHeight="348.0" prefWidth="1134.0" />
+      <DatePicker fx:id="datePickerFechaDesde" layoutX="24.0" layoutY="71.0" prefHeight="70.0" prefWidth="298.0" style="-fx-font: 24px &quot;Arial&quot;; -fx-pref-width: 300px;" styleClass="combo-box" />
+      <DatePicker fx:id="datePickerFechaHasta" layoutX="338.0" layoutY="71.0" prefHeight="70.0" prefWidth="294.0" style="-fx-font: 24px &quot;Arial&quot;; -fx-pref-width: 300px;" styleClass="combo-box" />
+      <ComboBox fx:id="comboBoxFilteTipoFecha" layoutX="649.0" layoutY="73.0" prefHeight="67.0" prefWidth="300.0" />
+      <Button layoutX="25.0" layoutY="150.0" mnemonicParsing="false" onAction="#onButtonFiltrarActionPerformed" prefWidth="145.0" styleClass="main-button" text="Filtrar" />
+      <Button layoutX="179.0" layoutY="150.0" mnemonicParsing="false" onAction="#onButtonEliminarMovimientoActionPerformed" prefWidth="145.0" styleClass="main-button" text="Eliminar" />
+      <Label layoutX="24.0" layoutY="30.0" styleClass="text" text="Movimientos">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableViewUsuarios" layoutX="14.0" layoutY="52.0" prefHeight="148.0" prefWidth="773.0" />
+      <Label layoutX="14.0" layoutY="14.0" styleClass="text" text="Usuarios">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldNombre" disable="true" layoutX="14.0" layoutY="211.0" prefWidth="250.0" promptText="Nombre" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textFieldPassword" disable="true" layoutX="536.0" layoutY="211.0" prefWidth="250.0" promptText="Password" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textFieldUsername" disable="true" layoutX="275.0" layoutY="211.0" prefWidth="250.0" promptText="Username" styleClass="input">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <CheckBox fx:id="checkboxInactivo" disable="true" layoutX="275.0" layoutY="316.0" mnemonicParsing="false" text="Deshabilitar" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkboxAdministrador" disable="true" layoutX="14.0" layoutY="316.0" mnemonicParsing="false" text="Administrador" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="buttonNuevo" layoutX="14.0" layoutY="384.0" mnemonicParsing="false" onAction="#onButtonNuevoActionPerformed" prefWidth="145.0" styleClass="main-button" text="Nuevo" />
+      <Button fx:id="buttonEditar" disable="true" layoutX="172.0" layoutY="384.0" mnemonicParsing="false" onAction="#onButtonEditarActionPerformed" prefWidth="145.0" styleClass="main-button" text="Editar" />
+      <Button fx:id="buttonGuardar" disable="true" layoutX="328.0" layoutY="384.0" mnemonicParsing="false" onAction="#onButtonGuardarActionPerformed" prefWidth="145.0" styleClass="main-button" text="Guardar" />
+      <Button fx:id="buttonCancelar" disable="true" layoutX="483.0" layoutY="384.0" mnemonicParsing="false" onAction="#onButtonCancelarActionPerformed" prefWidth="145.0" styleClass="main-button" text="Cancelar" />
+      <Button fx:id="buttonEliminar" disable="true" layoutX="641.0" layoutY="384.0" mnemonicParsing="false" onAction="#onButtonEliminarActionPerformed" prefWidth="145.0" styleClass="main-button" text="Eliminar" />
+   </children>
+</AnchorPane>

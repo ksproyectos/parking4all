@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Caja_subreport1" pageWidth="140" pageHeight="100" columnWidth="140" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8b4a275-3357-4073-942d-8cc2db6fa90b">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idCaja" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     Count(*) AS Count,
+     SUM(Movimientos.`ValorTotal`) AS total,
+     Movimientos.`TipoTarifa` AS tipo_tarifa
+FROM
+     `Movimientos` Movimientos RIGHT OUTER JOIN `Caja` Caja ON Movimientos.`FechaSalida` <= NOW()
+     AND Movimientos.`FechaSalida` >= Caja.`FechaApertura`
+WHERE
+     Caja.`idCaja` = $P{idCaja}
+GROUP BY
+     Movimientos.`TipoTarifa`]]>
+	</queryString>
+	<field name="Count" class="java.lang.Long"/>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_tarifa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="30" width="64" height="20" uuid="11d02a52-7e3b-4a6a-9e36-428596f0a800"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TARIFAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="30" width="76" height="20" uuid="b3b545f9-2639-49f1-8066-b9b7ebd9b81d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="21" width="64" height="20" uuid="0f25057e-fedc-4c36-8b04-6a85c2b0da5f"/>
+				<textFieldExpression><![CDATA[$F{Count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="1" width="140" height="20" uuid="72dd3dee-4e7d-41aa-9f33-71094da0c32e"/>
+				<textFieldExpression><![CDATA[$F{tipo_tarifa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="21" width="66" height="20" uuid="a14fedce-32d0-4c8f-8aa6-f491c18bc098"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

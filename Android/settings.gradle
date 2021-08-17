@@ -1,0 +1,1 @@
+include ':app', ':escpos', ':Parking4AllCore-1.0-SNAPSHOT', ':cloudpossdk'
